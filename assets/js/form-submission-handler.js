@@ -70,17 +70,13 @@
     xhr.onreadystatechange = function() {
         if (xhr.readyState === 4 && xhr.status === 200) {
           form.reset();
-          var formElements = form.querySelector(".form-elements")
+          var formElements = $('.form-elements');
           if (formElements) {
-            formElements.style.display = "none"; // hide form
-          }
-          var formButtons = form.querySelector(".actions")
-          if (formButtons) {
-            formButtons.style.display = "none"; // hide form buttons
-          }          
-          var thankYouMessage = form.querySelector(".thankyou_message");
+            formElements.hide();
+          }        
+          var thankYouMessage = $('.thankyou_message');
           if (thankYouMessage) {
-            thankYouMessage.style.display = "block";
+            thankYouMessage.fadeIn();
           }
         }
     };
